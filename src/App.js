@@ -21,11 +21,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar user={this.state.user} handleLogout={this.handleLogout} />
-        <Switch>
-          <Route exact path={"/"} render={({ history }) => <SignupForm />} />
-          <Route exact path={"/"} render={({ history }) => <LoginPage />} />
-        </Switch>
+        <NavBar />
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import userService from "../../utils/userService";
 import { TextField, Button } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
+import FacebookIcon from '@material-ui/icons/Facebook';
 import "./SignupForm.css";
 
 class SignupForm extends Component {
@@ -29,6 +30,13 @@ class SignupForm extends Component {
   render() {
     return (
       <div>
+        <p>Thank you for joining!</p>
+        <p>Sign up with </p>
+        <div className="sign-in-with">
+          <FacebookIcon className="facebook" style={{ fontSize: 60 }} color="primary" />
+          <h4> OR </h4>
+          <img style={{ width: 50, height: 50, }} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" />
+        </div>
         <form className="form-horizontal" onSubmit={this.handleSubmit}>
           <div className="SignupForm">
             <header className="header-footer">Sign Up</header>
@@ -78,7 +86,7 @@ class SignupForm extends Component {
               className="sumbit-button"
               type="submit"
               variant="contained"
-              color="secondary"
+              color="primary"
             >
               Submit
             </Button>

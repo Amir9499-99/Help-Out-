@@ -63,7 +63,7 @@ class LoginPage extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <Button type="submit" variant="contained" color="secondary">
+              <Button type="submit" variant="contained" color="primary">
                 Log in
               </Button>
               &nbsp;&nbsp;&nbsp;
