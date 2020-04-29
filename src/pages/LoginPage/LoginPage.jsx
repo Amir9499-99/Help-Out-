@@ -18,8 +18,8 @@ class LoginPage extends Component {
     e.preventDefault();
     try {
       await userService.login(this.state);
-      this.props.handleSignupOrLogin();
-      this.props.history.push("/");
+      // this.props.handleSignupOrLogin();
+      // this.props.history.push("/");
     } catch (err) {
       // Use a modal or toast in your apps instead of alert
       alert("Invalid Credentials!");
@@ -67,10 +67,10 @@ class LoginPage extends Component {
                 Log in
               </Button>
               &nbsp;&nbsp;&nbsp;
-              <Link className="cancel" to="/">
-                Cancel
-              </Link>
             </div>
+            {/* <Link className="cancel" to="/">
+                Cancel
+            </Link> */}
           </div>
         </form>
       </div>
@@ -78,4 +78,4 @@ class LoginPage extends Component {
   }
 }
 
-export default withRouter(LoginPage);
+export default LoginPage;
