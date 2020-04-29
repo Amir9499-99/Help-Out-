@@ -18,6 +18,7 @@ class LoginPage extends Component {
     e.preventDefault();
     try {
       await userService.login(this.state);
+      this.props.history.push("/services");
       // this.props.handleSignupOrLogin();
       // this.props.history.push("/");
     } catch (err) {
