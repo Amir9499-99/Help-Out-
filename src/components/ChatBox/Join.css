@@ -18,7 +18,7 @@ html, body {
     text-align: center;
     height: 100vh;
     align-items: center;
-    background-color: #1A1A1D;
+    background-color: white;
   }
   
   .joinInnerContainer {
@@ -32,7 +32,7 @@ html, body {
   }
   
   .heading {
-    color: white;
+    color: black;
     font-size: 2.5em;
     padding-bottom: 10px;
     border-bottom: 2px solid white;

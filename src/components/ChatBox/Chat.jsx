@@ -3,6 +3,7 @@ import queryString from "query-string";
 import InfoBar from "./InfoBar";
 import Input from "./Input";
 import Messages from "./Messages";
+import NavBar from "../NavBar/NavBar";
 import "./Chat.css";
 import io from "socket.io-client";
 

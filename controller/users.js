@@ -16,21 +16,19 @@ async function signup(req, res) {
     const token = createJWT(user);
     res.json({ token });
   } catch (err) {
-    console.log("this is err", err);
     res.status(400).json(err);
   }
 }
 
 async function login(req, res) {
+  console.log(req.body);
   try {
     const user = await User.findOne({ email: req.body.email });
-    console.log("this is user",user);
     if (!user) return res.status(401).json({ err: "bad credentials" });
     user.comparePassword(req.body.pw, (err, isMatch) => {
       if (isMatch) {
         const token = createJWT(user);
         res.json({ token });
-        console.log("this is res" ,res)
       } else {
         return res.status(401).json({ err: "bad credentials" });
       }

@@ -22,7 +22,7 @@ ul {
 }
 
 .proIcon {
-  color: black;
+  color: black !important;
   text-decoration: none;
   font-size: 10px;
 }
@@ -54,7 +54,7 @@ ul {
 
 .helpOutDiv {
   background-color: #6dbcc1;
-  margin-left: -20px;
+  margin-left: -3%;
   height: auto;
   text-align: center;
   height: 65px;
@@ -65,5 +65,13 @@ ul {
 }
 
 .helpOutLogo {
-  width: 60px;
+  width: 70px;
+}
+
+.profile-icon {
+  fill: white;
+}
+
+.MuiIconButton-label {
+  color: white;
 }

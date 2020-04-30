@@ -1,0 +1,89 @@
+body {
+  font-family: museo-sans, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.one, .two {
+  display: flex;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 29px;
+  color: #2a3d7a;
+  margin-left: 4vmin;
+}
+
+
+.title-errands, .title-support{
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 29px;
+  color: #2a3d7a;
+}
+
+.buttonNumber{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #6dbcc1;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control {
+  margin-top: 10%;
+}
+
+.thank-you {
+  text-align: left;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 50px;
+  color: #2a3d7a;
+  margin-left: 0.1%;
+}
+
+.text-muted{
+  text-align: left;
+}
+
+.MuiFormControlLabel-label{
+  font-weight: 900;
+}
+
+.MuiIconButton-label{
+  color: #2a3d7a;
+}
+
+.two{
+  clear: both;
+  text-align: left;
+  margin-top: 15%;
+}
+
+.form-control-errands{
+  float: left;
+}
+
+.title-errands{
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 29px;
+  color: #2a3d7a;
+}
+.errands-services{
+ display: inline-block;
+  width: 250px;
+}
+.support-advice{
+  width: 250px;
+}

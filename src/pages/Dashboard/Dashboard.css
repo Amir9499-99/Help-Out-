@@ -1,0 +1,83 @@
+.dashboardImage {
+  float: left;
+  width: 42%;
+  height: 42%;
+  margin: 8% 0 10% 5%;
+}
+
+.dashboardSideDiv {
+  float: left;
+  width: 42%;
+  height: 32%;
+  margin: 8% 0 10% 5%;
+}
+
+p {
+  font-family: museo-sans, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38px;
+  line-height: 50px;
+  color: #2a3d7a;
+}
+
+span {
+  font-family: museo-sans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 29px;
+  color: #2a3d7a;
+  text-align: left;
+}
+
+.get-started {
+  margin-top: 32px;
+  text-align: left;
+  padding: 5px 0 0 30px;
+  background-color: #6dbcc1;
+  width: 465px;
+  height: 170px;
+  color: white;
+}
+
+h3{
+    font-size: 20px;
+}
+
+h2{
+    font-size: 30px;
+}
+
+input{
+    width: 320px;
+}
+
+.go{
+    width: 50px;
+    background-color: #2A3D7A;
+    color: white;
+    font-family: museo-sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    border: solid 1px #2A3D7A ;
+}
+
+h4{
+    font-family: museo-sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    color: white;
+}
+

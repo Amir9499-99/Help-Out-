@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { TextField, Button } from "@material-ui/core";
 import userService from "../../utils/userService";
+import NavBar from "../../components/NavBar/NavBar";
 import "./LoginPage.css";
 
 class LoginPage extends Component {
@@ -18,68 +19,71 @@ class LoginPage extends Component {
     e.preventDefault();
     try {
       await userService.login(this.state);
+      this.props.handleSignupOrLogin();
       this.props.history.push("/services");
-      // this.props.handleSignupOrLogin();
-      // this.props.history.push("/");
     } catch (err) {
       console.log(err);
-      // Use a modal or toast in your apps instead of alert
-      alert("Invalid Credentials!");
+      console.log(this.state);
+      
     }
   };
 
   render() {
     return (
-      <div className="LoginPage">
-        <form className="form-horizontal" onSubmit={this.handleSubmit}>
-          <header className="header-footer">Log In</header>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <TextField
-                type="email"
-                className="form-control"
-                placeholder="Email"
-                value={this.state.email}
-                name="email"
-                onChange={this.handleChange}
-                id="outlined-basic"
-                label="Email"
-                variant="outlined"
-              />
+      <div>
+        <NavBar />
+        <div className="LoginPage">
+          <form className="form-horizontal" onSubmit={this.handleSubmit}>
+            <header className="header-footer">Log In</header>
+            <div className="form-group">
+              <div className="col-sm-12">
+                <TextField
+                  type="email"
+                  className="form-control"
+                  placeholder="Email"
+                  value={this.state.email}
+                  name="email"
+                  onChange={this.handleChange}
+                  id="outlined-basic"
+                  label="Email"
+                  variant="outlined"
+                />
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <TextField
-                type="password"
-                className="form-control"
-                placeholder="Password"
-                value={this.state.pw}
-                name="pw"
-                onChange={this.handleChange}
-                id="outlined-basic"
-                label="Password"
-                variant="outlined"
-              />
+            <div className="form-group">
+              <div className="col-sm-12">
+                <TextField
+                  type="password"
+                  className="form-control"
+                  placeholder="Password"
+                  value={this.state.pw}
+                  name="pw"
+                  onChange={this.handleChange}
+                  id="outlined-basic"
+                  label="Password"
+                  variant="outlined"
+                />
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12 text-center">
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                onClick={this.handleSubmit}
-              >
-                Log in
-              </Button>
-              &nbsp;&nbsp;&nbsp;
+            <div className="form-group">
+              <div className="col-sm-12 text-center">
+                <Button
+                  className="sumbit"
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  onClick={this.handleSubmit}
+                >
+                  Log in
+                </Button>
+                &nbsp;&nbsp;&nbsp;
+              </div>
             </div>
-            {/* <Link className="cancel" to="/">
-                Cancel
-            </Link> */}
-          </div>
-        </form>
+          </form>
+          <Link to="/signup" className="signup">
+            Click here to, <span>Sign Up</span>
+          </Link>
+        </div>
       </div>
     );
   }

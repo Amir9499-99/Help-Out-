@@ -1,17 +1,11 @@
 .form-control {
-  border-radius: 4px;
-  margin: 10px;
+  margin: 5px;
+  border-radius: 0;
+  border: solid grey 1px;
+  height: 50px;
 }
 
-.form-group {
-  margin: 1px;
-  border-radius: 4px;
-  margin: 10px;
-}
 
-.form-horizontal {
-  border-radius: 10px;
-}
 
 .sumbit-button {
   margin-top: 4px;
@@ -30,12 +24,70 @@
   background-color: white;
 }
 
-p{
+p {
   font-size: 20px;
 }
 
-.sign-in-with{
-  display: inline;
-  width: 100%;
-  height: auto;
+.sign-in-with-f {
+  border: solid 1px grey;
+  width: 240px;
+  height: 45px;
+  float: left;
+  display: block;
+  margin: 10px;
+}
+
+.sign-in-with-g {
+  border: solid 1px grey;
+  width: 240px;
+  height: 45px;
+  float: left;
+  display: block;
+  margin: 10px;
+}
+
+.sign-in-with-facebook {
+  font-size: 15px;
+}
+
+.facebook,
+.google {
+  float: left;
+}
+
+.google {
+  margin-top: 4px;
+  margin-left: -10px;
+}
+
+.container-fluid {
+  margin-bottom: 5vmin !important;
+}
+
+.SignupForm {
+  float: left;
+  margin-left: 17%;
+  margin-bottom: 10%;
+}
+
+.facebook-google-container {
+  margin-right: 8%;
+  margin-top: 3%;
+  display: block;
+  /* border: solid 1px grey; */
+  width: 400px;
+  float: right;
+}
+
+.we-just-need {
+  font-size: 15px;
+}
+
+p {
+  margin: -2%;
+}
+
+.sign-up-with {
+  text-align: left;
+  margin-left: 2%;
 }

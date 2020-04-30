@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
-import About from "../../pages/About/About";
-import Services from "../../pages/Services/Services";
-import Help from "../../pages/Help/Help";
-import LoginPage from "../../pages/LoginPage/LoginPage";
-import SignupForm from "../../pages/SignupForm/SignupForm";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -34,21 +29,6 @@ export default function NavBar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  //   state = {
-  //     user: userService.getUser(),
-  //   };
-
-  //   handleLogout = () => {
-  //     userService.logout();
-  //     this.setState({
-  //       user: null,
-  //     });
-  //   };
-
-  const handleChange = (event) => {
-    // setAuth(event.target.checked);
-  };
-
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -76,168 +56,94 @@ export default function NavBar(props) {
     </div>
   );
   return (
-    <Router>
-      <AppBar position="static">
-        <Toolbar>
-          <div className="helpOutDiv">
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-            >
-              <Link to="/" className="helpOut">
-                <img
-                  src="https://i.imgur.com/TIbHAje.png"
-                  className="helpOutLogo"
-                />
-                HELP OUT
-              </Link>
-            </IconButton>
-          </div>
+    <AppBar position="static">
+      <Toolbar>
+        <div className="helpOutDiv">
           <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
           >
-            <Link to="/about" className="navColor">
-              About
+            <Link to="/" className="helpOut">
+              <img
+                src="https://i.imgur.com/TIbHAje.png"
+                className="helpOutLogo"
+              />
+              HELP OUT
             </Link>
           </IconButton>
+        </div>
+        <IconButton
+          edge="start"
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="menu"
+        >
+          <Link to="/about" className="navColor">
+            About
+          </Link>
+        </IconButton>
+        <IconButton
+          edge="start"
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="menu"
+        >
+          <Link to="/services" className="navColor">
+            Get Started
+          </Link>
+        </IconButton>
+        <IconButton
+          edge="start"
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="menu"
+        >
+          <Link to="/help" className="navColor">
+            Help
+          </Link>
+        </IconButton>
+        <Typography variant="h6" className={classes.title}></Typography>
+        <div>
           <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
           >
-            <Link to="/services" className="navColor">
-              How it works
+            <Link to="/join" className="navColor">
+                Chat
             </Link>
           </IconButton>
           <IconButton
-            edge="start"
-            className={classes.menuButton}
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleMenu}
             color="inherit"
-            aria-label="menu"
           >
-            <Link to="/help" className="navColor">
-              Help
-            </Link>
-          </IconButton>
-          <Typography variant="h6" className={classes.title}></Typography>
-          <div>
-            <IconButton
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleMenu}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={open}
-              onClose={handleClose}
-            >
-              <Link to="/profile">
-                <MenuItem className="proIcon">Profile</MenuItem>
-              </Link>
-              <Link to="/logout">
-                <MenuItem className="proIcon" onClick={props.handleLogout}>
-                  Log Out
-                </MenuItem>
-              </Link>
-            </Menu>
-          </div>
-        </Toolbar>
-      </AppBar>
-      {/* <AppBar position="static">
-        <Toolbar>
-          <IconButton edge="start" color="inherit">
-            <Link to="/signup" className="navColor">
-              SignUp
-            </Link>
+            <AccountCircle className="profile-icon" />
           </IconButton>
 
-          <div>
-            <IconButton
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleMenu}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={open}
-              onClose={handleClose}
-            >
-              <MenuItem>Sign In</MenuItem>
-              <MenuItem>SignUp</MenuItem>
-            </Menu>
-          </div>
-        </Toolbar>
-      </AppBar> */}
-      <Switch>
-        <Route path="/about" component={About} />
-        <Route path="/services" component={Services} />
-        <Route path="/help" component={Help} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/signup" component={SignupForm} />
-      </Switch>
-    </Router>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            open={open}
+            onClose={handleClose}
+          >
+            {loginOrLogout}
+          </Menu>
+        </div>
+      </Toolbar>
+    </AppBar>
   );
 }
-// const NavBar = (props) => {
-//   let nav = props.user ? (
-//     <React.Fragment>
-//       {/* <Link to="/" className="NavBar-link">
-//         HOME
-//       </Link>
-//       &nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;&nbsp;
-//       <span className="NavBar-link">WELCOME - {props.user.name}</span>
-//       &nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;&nbsp;
-//       <Link to="" onClick={props.handleLogout} className="NavBar-link">
-//         LOG OUT
-//       </Link> */}
-//       <h1>Navbar</h1>
-//     </React.Fragment>
-//   ) : (
-//     <React.Fragment>
-//       {/* <Link to="/signin" className="NavBar-link">
-//         {" "}
-//         LOG IN{" "}
-//       </Link>
-//       &nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;
-//       <Link to="/signup" className="NavBar-link">
-//         {" "}
-//         SIGN UP{" "}
-//       </Link> */}
-//       <
-//     </React.Fragment>
-//   );
-
-//   return <div className="NavBar">{nav}</div>;
-// };
