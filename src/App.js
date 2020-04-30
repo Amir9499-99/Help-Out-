@@ -6,6 +6,8 @@ import SignupForm from "./pages/SignupForm/SignupForm";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import NavBar from "./components/NavBar/NavBar";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Join from "./components/ChatBox/Join";
+import Chat from "./components/ChatBox/Chat";
 
 class App extends Component {
   state = {
@@ -23,8 +25,16 @@ class App extends Component {
     const isLoggedIn = this.state.user;
     return (
       <div className="App">
-        {!isLoggedIn && <LoginPage />}
-        { isLoggedIn && <Dashboard handleLogout={this.handleLogout} />}
+        {/* <div className="App">
+          {!isLoggedIn && <LoginPage />}
+          {isLoggedIn && <Dashboard handleLogout={this.handleLogout} />}
+        </div> */}
+        <Switch>
+          <Route exact path={"/join"} render={({ history }) => <Join />} />
+          />
+          <Route exact path={"/chat"} render={({ history }) => <Chat />} />
+          />
+        </Switch>
       </div>
     );
   }
