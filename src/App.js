@@ -25,10 +25,10 @@ class App extends Component {
     const isLoggedIn = this.state.user;
     return (
       <div className="App">
-        {/* <div className="App">
+        <div className="App">
           {!isLoggedIn && <LoginPage />}
           {isLoggedIn && <Dashboard handleLogout={this.handleLogout} />}
-        </div> */}
+        </div>
         <Switch>
           <Route exact path={"/join"} render={({ history }) => <Join />} />
           />
