@@ -79,6 +79,22 @@ export default function NavBar(props) {
     <Router>
       <AppBar position="static">
         <Toolbar>
+          <div className="helpOutDiv">
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+            >
+              <Link to="/" className="helpOut">
+                <img
+                  src="https://i.imgur.com/TIbHAje.png"
+                  className="helpOutLogo"
+                />
+                HELP OUT
+              </Link>
+            </IconButton>
+          </div>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -96,7 +112,7 @@ export default function NavBar(props) {
             aria-label="menu"
           >
             <Link to="/services" className="navColor">
-              Services
+              How it works
             </Link>
           </IconButton>
           <IconButton

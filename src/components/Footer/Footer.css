@@ -1,0 +1,24 @@
+html,
+body {
+  height: 100%;
+}
+
+.footer {
+  background-color: #7fbabf;
+  padding: 5vmin 15vmin;
+}
+
+ul,
+li {
+  color: white;
+  text-align: left;
+}
+
+.footer-icons {
+  display: flex;
+}
+
+.footer-icons,
+img {
+  padding: 0px 2vmin;
+}

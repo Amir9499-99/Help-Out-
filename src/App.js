@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Join from "./components/ChatBox/Join";
 import Chat from "./components/ChatBox/Chat";
+import Footer from "./components/Footer/Footer";
 
 class App extends Component {
   state = {
@@ -35,6 +36,7 @@ class App extends Component {
           <Route exact path={"/chat"} render={({ history }) => <Chat />} />
           />
         </Switch>
+        <Footer />
       </div>
     );
   }

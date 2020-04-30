@@ -7,8 +7,8 @@ import "./Chat.css";
 import io from "socket.io-client";
 
 const localhost = "http://localhost:3001";
-const heroku = "";
-const socket = io.connect(localhost);
+const heroku = "https://support-this.herokuapp.com/";
+const socket = io.connect(heroku);
 
 const Chat = () => {
   const [name, setName] = useState("");
