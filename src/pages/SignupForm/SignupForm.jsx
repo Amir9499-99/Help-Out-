@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import userService from "../../utils/userService";
 import { TextField, Button } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
-import FacebookIcon from '@material-ui/icons/Facebook';
+import FacebookIcon from "@material-ui/icons/Facebook";
 import "./SignupForm.css";
 
 class SignupForm extends Component {
@@ -20,6 +20,7 @@ class SignupForm extends Component {
     event.preventDefault();
     try {
       await userService.signup(this.state);
+      this.props.history.push("/login");
       // this.props.handleSignupOrLogin();
       // this.props.history.push("/signin");
     } catch (err) {
@@ -33,9 +34,16 @@ class SignupForm extends Component {
         <p>Thank you for joining!</p>
         <p>Sign up with </p>
         <div className="sign-in-with">
-          <FacebookIcon className="facebook" style={{ fontSize: 60 }} color="primary" />
+          <FacebookIcon
+            className="facebook"
+            style={{ fontSize: 60 }}
+            color="primary"
+          />
           <h4> OR </h4>
-          <img style={{ width: 50, height: 50, }} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" />
+          <img
+            style={{ width: 50, height: 50 }}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
+          />
         </div>
         <form className="form-horizontal" onSubmit={this.handleSubmit}>
           <div className="SignupForm">

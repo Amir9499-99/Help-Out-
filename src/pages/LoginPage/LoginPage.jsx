@@ -22,6 +22,7 @@ class LoginPage extends Component {
       // this.props.handleSignupOrLogin();
       // this.props.history.push("/");
     } catch (err) {
+      console.log(err);
       // Use a modal or toast in your apps instead of alert
       alert("Invalid Credentials!");
     }

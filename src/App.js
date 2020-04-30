@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import SignupForm from "./pages/SignupForm/SignupForm";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import NavBar from "./components/NavBar/NavBar";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 class App extends Component {
   state = {
@@ -19,9 +20,11 @@ class App extends Component {
   };
 
   render() {
+    const isLoggedIn = this.state.user;
     return (
       <div className="App">
-        <NavBar />
+        {!isLoggedIn && <LoginPage />}
+        { isLoggedIn && <Dashboard handleLogout={this.handleLogout} />}
       </div>
     );
   }

@@ -14,6 +14,7 @@ import Menu from "@material-ui/core/Menu";
 import Typography from "@material-ui/core/Typography";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+import userService from "../../utils/userService";
 import "./NavBar.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,10 +29,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavBar() {
+export default function NavBar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  //   state = {
+  //     user: userService.getUser(),
+  //   };
+
+  //   handleLogout = () => {
+  //     userService.logout();
+  //     this.setState({
+  //       user: null,
+  //     });
+  //   };
 
   const handleChange = (event) => {
     // setAuth(event.target.checked);
@@ -45,6 +57,24 @@ export default function NavBar() {
     setAnchorEl(null);
   };
 
+  let loginOrLogout = props.user ? (
+    <div>
+      <Link to="/">
+        <MenuItem className="proIcon" onClick={props.handleLogout}>
+          Log Out
+        </MenuItem>
+      </Link>
+    </div>
+  ) : (
+    <div>
+      <Link to="/login">
+        <MenuItem className="proIcon">Log In</MenuItem>
+      </Link>
+      <Link to="/signup">
+        <MenuItem className="proIcon">Sign Up</MenuItem>
+      </Link>
+    </div>
+  );
   return (
     <Router>
       <AppBar position="static">
@@ -104,12 +134,13 @@ export default function NavBar() {
               open={open}
               onClose={handleClose}
             >
-              <Link to="/login">
-                <MenuItem className="proIcon">Log In</MenuItem>
+              <Link to="/profile">
+                <MenuItem className="proIcon">Profile</MenuItem>
               </Link>
-
-              <Link to="/signup">
-                <MenuItem className="proIcon">Sign Up</MenuItem>
+              <Link to="/logout">
+                <MenuItem className="proIcon" onClick={props.handleLogout}>
+                  Log Out
+                </MenuItem>
               </Link>
             </Menu>
           </div>
