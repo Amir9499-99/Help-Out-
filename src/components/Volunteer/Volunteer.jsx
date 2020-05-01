@@ -242,13 +242,13 @@ class Volunteer extends Component {
             </FormControl>
           </div>
         )}
-        {/* <div className="one mt-3">
+        <div className="one mt-3">
           <span className="buttonNumber">3</span>
           <span className="title">
             Create Your Post. Fill in the information you want your community to
             see.
           </span>
-        </div> */}
+        </div>
       </div>
     );
   }
